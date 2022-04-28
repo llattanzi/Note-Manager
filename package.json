@@ -9,6 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "express": "^4.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llattanzi/Note-Manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/llattanzi/Note-Manager/issues"
+  },
+  "homepage": "https://github.com/llattanzi/Note-Manager#readme"
 }
