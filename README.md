@@ -17,7 +17,7 @@
   N/A
 
   ## Usage:
-  Visit *insert heroku site here* and start taking notes!
+  Visit https://powerful-fortress-40072.herokuapp.com/ and start taking notes!
 
   ## Licenses:
   MIT<br/>
