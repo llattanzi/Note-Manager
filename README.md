@@ -4,6 +4,10 @@
   ## Description:
   A note taking application that can be used to write and save notes. Notes are saved and retrieved from a server in json format.
 
+
+https://user-images.githubusercontent.com/96707052/166118362-65a4c909-26ea-409e-bb2d-2de74367450f.mp4
+
+
   ## Table of Contents
   - [Description](#description)
   - [Installation](#installation)
