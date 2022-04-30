@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { append } = require('express/lib/response');
 const fs = require('fs');
 const path = require('path');
-const { db } = require('../../db/db');
+let { db } = require('../../db/db');
 // require package for creating unique ids
 const uniqid = require('uniqid');
 
@@ -40,18 +40,18 @@ router.post('/notes', (req, res) => {
 });
 
 router.delete('/notes/:id', (req, res) => {
-    // filter db by id
+    // // filter db by id
     const note = db.filter(db => db.id === req.params.id)[0];
-    // check if note exists, if not send error
+    // // check if note exists, if not send error
     if (note) {
         // delete the note from the database
-        let newDb = db.filter(db => db.id !== req.params.id);
+        db = db.filter(db => db.id !== req.params.id);
         // rewrite db.json
         fs.writeFileSync(
             path.join(__dirname, '../../db/db.json'),
-            JSON.stringify({db: newDb}, null, 2)
+            JSON.stringify({db: db}, null, 2)
         );
-        res.send('Note deleted.');
+        res.json(db);
     }
     else {
         res.send(404);
