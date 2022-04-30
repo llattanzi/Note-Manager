@@ -3,13 +3,14 @@ const { append } = require('express/lib/response');
 const fs = require('fs');
 const path = require('path');
 const { db } = require('../../db/db');
+// require package for creating unique ids
+const uniqid = require('uniqid');
 
 
 
 router.get('/notes', (req, res) => {
     let results = db;
     if (results) {
-        console.log('retrieved notes')
         res.json(results);
     }
     else {
@@ -18,8 +19,8 @@ router.get('/notes', (req, res) => {
 });
 
 router.post('/notes', (req, res) => {
-    // set unique id of the new note to the length of database
-    req.body.id = db.length.toString();
+    // set unique id of the new note
+    req.body.id = uniqid();
 
     // validate that the note has a title and description before adding to db. If not send error
     if (!req.body.title || !req.body.text) {
